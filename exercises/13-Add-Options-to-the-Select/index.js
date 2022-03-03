@@ -1,16 +1,9 @@
-let countries = ["USA", "France", "Italy", "Brazil", "Colombia", "Belize", "Venezuela"];
-    //obtengo elementos de array countries
-countries.forEach(element => {
-    //creo elemento option
-    let option = document.createElement("option")
+const countries = ['USA', 'France', 'Italy', 'Brazil', 'Colombia', 'Belize', 'Venezuela'];
 
-    //llamo a elemento mySelect para agregar appendChild
-    const select = document.querySelector("#mySelect")
-    select.appendChild(option)
-    option.innerHTML=element;
-    console.log(select);
-   select.addEventListener('click', function() {
-        console.log('hola');
-      });
-
+window.addEventListener("load", () => {
+    //traigo elemento mySelect
+  const sel = document.getElementById("mySelect");
+    //addlistener a elemento sel
+  sel.addEventListener("change", e => alert(e.currentTarget.value));
+  sel.innerHTML += countries.map(country => new Option(country, country).outerHTML)
 })
