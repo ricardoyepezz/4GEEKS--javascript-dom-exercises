@@ -1,2 +1,5 @@
-let myString = "<p>Hello!</p> <strong>My friend</strong>";
-document.write(myString);
+let myString = "<p>Hello!</p> <strong>My friend,</strong> we are in the year ";
+const d = new Date();
+let year = d.getFullYear();
+document.write(myString, year);
+
